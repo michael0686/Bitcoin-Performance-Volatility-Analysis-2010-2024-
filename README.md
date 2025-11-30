@@ -44,9 +44,9 @@ This project focuses on simple, clear questions that a financial or analytics te
 ## Key Metrics & Definitions
 
 - **Daily Return (%):**  
-  \[
-  \text{daily return} = \frac{\text{close\_price} - \text{open\_price}}{\text{open\_price}} \times 100
-  \]
+  
+ Daily Return (%) = ((close_price - open_price) / open_price)*100
+  
   Measures the intraday move from open to close.
 
 - **Average Monthly Return (%):**  
