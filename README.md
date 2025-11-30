@@ -122,3 +122,46 @@ For this reason, **volatility interpretations are more meaningful for later year
 - Linking data-driven findings to real-world events (speculative surge in 2013, COVID crash in 2020, crypto downturn in 2022)
 - Balanced, non-hype communication of cryptocurrency behavior
 
+## Project Structure
+
+bitcoin-performance-volatility/
+│
+├─ queries.sql      # All SQL queries used in the project, with comments
+├─ findings.md      # Detailed written findings and interpretation
+├─ README.md        # This file
+└─ screenshots/     # screenshots from pgAdmin showing key queries/results
+
+Screenshots of the SQL output tables are stored in the `screenshots/` folder.  
+Each screenshot corresponds to a specific analytical step in the project.
+
+| Screenshot filename | Purpose |
+|--------------------|---------|
+| **Query 1 – Calculate daily intraday returns** | Computes the percentage return from open → close for every day in the dataset |
+| **Query 2 – Highest intraday gains** | Identifies the most bullish single day in Bitcoin trading history |
+| **Query 3 – Largest intraday losses** | Identifies the worst single day in Bitcoin trading history |
+| **Query 4 – Monthly average return + volatility** | Demonstrates how daily volatility smooths out over longer horizons |
+| **Query 5 – Best months (highest average intraday returns)** | Determines the strongest month based on aggregated daily returns |
+| **Query 6 – Worst months (lowest average intraday returns)** | Determines the weakest month based on aggregated daily returns |
+| **Query 7 – Monthly summary table** | Full monthly volatility profile useful for dashboards or exporting to BI tools |
+
+## How to Recreate the Analysis
+
+1. **Load data into PostgreSQL**
+   - Create the `bitcoin_daily` table with the following columns:
+     - `start_date, end_date, open_price, high_price, low_price, close_price, volume, market_cap`
+   - Use pgAdmin’s **Import** tool to load the Kaggle CSV into the table.
+     - Ensure `Header` is checked and delimiter is set to `,`.
+
+2. **Run the SQL queries**
+   - Execute the queries from `queries.sql` in any order, but typical workflow is:
+     1. Preview the data
+     2. Measure daily intraday returns
+     3. Identify best and worst days
+     4. Analyze monthly averages and volatility
+     5. Export the monthly summary if needed
+
+3. **Review findings**
+   - The written interpretation is provided in `findings.md`.
+   - Screenshots of query results are included in the `screenshots/` folder.
+
+You should now be able to reproduce the full analysis independently using PostgreSQL.
