@@ -1,1 +1,126 @@
+# Findings — Bitcoin Performance & Volatility Analysis (2010–2024)
 
+This project examines 5,059 days of Bitcoin price activity from July 27, 2010 to May 22, 2024, focusing on how Bitcoin behaves as a financial asset over different time horizons.
+
+Rather than emphasizing headlines or dramatic price swings, this analysis uses intraday returns (open → close) to evaluate Bitcoin’s performance and volatility in a way that aligns with traditional financial analytics.
+
+---
+
+## 1. Daily Perspective — Bitcoin Is Extremely Volatile
+
+The SQL results show that Bitcoin’s best and worst days were:
+
+| Metric | Result |
+|--------|--------|
+| Best single day | **2013-11-18 — +41.68% intraday return** |
+| Worst single day | **2020-03-12 — −40.44% intraday return** |
+
+Interpretation:
+
+- Bitcoin has experienced dramatic price spikes and crashes within a single trading day.
+- These extreme events often align with major macroeconomic factors:
+  - November 2013 → speculative surge during the first significant Bitcoin boom
+  - March 2020 → broad COVID-19 panic when global financial markets sold off simultaneously
+
+This supports a traditional financial conclusion:  
+> Bitcoin exhibits extremely high short-term volatility and is risky for short-horizon trading.
+
+---
+
+## 2. Monthly Perspective — Volatility Smooths Out Over Time
+
+Aggregating daily intraday returns into monthly averages produces a different view:
+
+| Metric | Result |
+|--------|--------|
+| Best month | **2013-11 — +6.12% average intraday return** |
+| Worst month | **2022-06 — −1.43% average intraday return** |
+
+Interpretation:
+
+- Even in its strongest month, Bitcoin’s average intraday return was only 6.12%.
+- Even in its weakest month, the average intraday return was −1.43%.
+
+This suggests:
+
+> Although Bitcoin is highly volatile from day to day, when viewed month-to-month, the extreme movements flatten and produce far more modest average returns.
+
+---
+
+## 3. Early Data Behavior (2010–2012)
+
+The dataset shows that the earliest portion of Bitcoin trading history contains many days where:
+
+open_price = high_price = low_price = close_price
+
+As a result:
+
+- Daily return = 0%**
+- Average monthly return = 0%
+- Monthly volatility = 0%
+
+This does not indicate a problem in the SQL calculations.  
+It reflects characteristics of the early Bitcoin market:
+
+- Low liquidity
+- Sparse price reporting
+- Minimal recorded intraday variation
+
+Because of this, volatility patterns are most meaningful beginning in later years when intraday price movement is consistently present.
+
+---
+
+## 4. What This Means from an Investment-Time-Horizon View
+
+The data supports a balanced conclusion familiar to traditional asset analysis:
+
+| Timeframe | Bitcoin Behavior |
+|----------|------------------|
+| **Day-to-day** | Extremely volatile — sharp intraday swings, major spikes and crashes |
+| **Month-to-month** | Net returns are generally modest; volatility smooths out |
+| **Long-term cycles** | Broad expansions and contractions similar to cyclical financial assets |
+
+A practical interpretation is:
+
+> Bitcoin behaves like a highly volatile asset in the short term, but over longer horizons its average performance becomes much less dramatic and is driven by macroeconomic cycles rather than random chaos.
+
+This perspective does not claim that Bitcoin is “safe” or “stable.”  
+It simply reflects what the data shows:
+
+- **Short-term trading amplifies volatility**  
+- **Long-term holding smooths volatility and reveals cyclical trends**
+
+---
+
+## 5. Limitations & Opportunities for Future Work
+
+This project focuses only on **intraday return (open → close)**.  
+Other valid approaches could extend the analysis, including:
+
+- Day-over-day return based on closing prices using window functions
+- Sharpe ratio / risk-adjusted performance
+- Comparisons with equity indices (S&P 500, NASDAQ)
+- Event-based volatility windows around major financial news
+
+---
+
+## Summary
+
+This project demonstrates the following:
+
+- Ability to load and analyze a large real-world financial dataset using SQL
+- Use of calculated fields, aggregation, date functions, and volatility metrics
+- Communication of findings with cautious financial interpretation rather than hype
+- Recognition that different time horizons reveal different risk profiles
+
+In plain terms:
+
+> Bitcoin may look chaotic day-to-day, but across longer spans it behaves more like a cyclical financial asset whose returns and volatility are driven by macroeconomic forces.
+
+This conclusion is supported directly by SQL results — not by market sentiment or speculation.
+
+---
+
+### Status
+
+Completed as part of an analytics portfolio and maintained for future enhancement.
