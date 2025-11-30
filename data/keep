@@ -1,1 +1,9 @@
+# Data Access
+
+The dataset used for this project is not included in this repository due to licensing restrictions.
+
+It can be downloaded for free from Kaggle at the following link:
+https://www.kaggle.com/datasets/priyamchoksi/bitcoin-historical-prices-and-activity-2010-2024
+
+After downloading, import the CSV into PostgreSQL using pgAdmin (Import tool) and run the SQL queries in the `queries.sql` file.
 
