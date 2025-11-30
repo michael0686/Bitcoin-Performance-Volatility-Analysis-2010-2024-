@@ -129,8 +129,8 @@ bitcoin-performance-volatility/
 ├─ queries.sql      # All SQL queries used in the project, with comments
 ├─ findings.md      # Detailed written findings and interpretation
 ├─ README.md        # This file
-└─ screenshots/     # screenshots from pgAdmin showing key queries/results
-
+├─ screenshots/     # screenshots from pgAdmin showing key queries/results
+└─ data
 Screenshots of the SQL output tables are stored in the `screenshots/` folder.  
 Each screenshot corresponds to a specific analytical step in the project.
 
